@@ -30,8 +30,8 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         # riga 1
-        self._txtRatingMin = ft.TextField(label="Valutazione minima", value="0")
-        self._txtRatingMax = ft.TextField(label="Valutazione massima", value="0")
+        self._txtRatingMin = ft.TextField(label="Valutazione minima", value="7.0")
+        self._txtRatingMax = ft.TextField(label="Valutazione massima", value="10.0")
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea grafo",
                                                 on_click=self._controller.handleCreaGrafo)
         self._btnStampaInfo = ft.ElevatedButton(text="Stampa Info",
@@ -49,6 +49,7 @@ class View(ft.UserControl):
         self._txtInN = ft.TextField(label="Numero di attori (N)")
         self._btnTrovaGruppo = ft.ElevatedButton(text="Trova gruppo attori",
                                                   on_click=self._controller.handleTrovaGruppo)
+        self._controller.fillDDAttori()
 
         row2 = ft.Row([ft.Container(self._ddActor, width=300),
                        ft.Container(self._txtInN, width=150),
